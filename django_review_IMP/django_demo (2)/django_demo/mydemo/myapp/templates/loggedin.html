@@ -1,0 +1,255 @@
+<style type="text/css">
+  .divbackg {
+      background-image: url(https://podcastbuffs.com/wp-content/uploads/2022/12/Build-your-credibility.png);
+      background-position: top;
+     }
+      
+  .w3-quarter {
+      background-color: #fcfbf3;  }
+  .w3-row {
+        background-color: #fcfbf3;  }
+  .w3-row-padding  w3-padding-64 w3-container {
+    background-color: #fcfbf3;  }
+    
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>DEMO WEB</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif, background-color: #fcfbf3}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card w3-right-align w3-large">
+    <div class="w3-right w3-hide-small">
+      {% if user.is_authenticated %}
+      <a href="#user" class="w3-bar-item w3-button">{{ user.username }}</a>
+      <a href="#about" class="w3-bar-item w3-button">For Businesses</a>
+      <a href = "{% url 'home' %}" class="w3-bar-item w3-button">Log out</a>
+      {% else %}
+      <a href = "{% url 'signup' %}" class="w3-bar-item w3-button">Sign Up</a>
+      <a href="#about" class="w3-bar-item w3-button">For Businesses</a>
+      <a href = "{% url 'logout' %}" class="w3-bar-item w3-button">Log out</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header  class="divbackg" style="padding:250px 25px">
+
+  <h1 class="w3-margin w3-jumbo w3-center ">DEMO WEB</h1>
+  <div class="topnav">
+
+    <div class="topnav w3-center">
+      <form action="{% url 'index_' %}">
+        <input type="text" placeholder="Search.." name="searched">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+  </div>
+  <div class="topnav w3-center">
+    <button><a href="{% url 'review' %}">Write a Review</a></button>
+  </div>
+</header>
+<div class="w3-container w3-padding-64 w3-center" id="team">
+  <h2>Explore Categories</h2>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      background-color: #fcfbf3;
+      padding: 10px;
+    }
+    .grid-item {
+      background-color: fcfbf3;
+      border: 1px solid rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      font-size: 30px;
+      text-align: center;
+    }
+    </style>
+    </head>
+    <body>
+    
+    <div class="grid-container">
+      <div class="grid-item"><a href = "{% url 'entertainment' %}" class="w3-bar-item w3-button"><h3><i class="fa fa-smile-o"></i>  Entertainment</h3></a></div>
+      <div class="grid-item"><a href = "{% url 'technology' %}" class="w3-bar-item w3-button"><h3><i class="fa fa-tablet"></i>  Technology</h3></a></div>
+      <div class="grid-item"><a href = "{% url 'medical' %}" class="w3-bar-item w3-button"><h3><i class="fa fa-plus-square"></i>  Medical</h3></a></div>  
+      <div class="grid-item"><a href = "{% url 'fashion' %}" class="w3-bar-item w3-button"><h3><i class="fa fa-user-circle"></i>  Fashion</h3></a></div>
+      <div class="grid-item"><a href = "{% url 'cosmetics' %}" class="w3-bar-item w3-button"><h3><i class="fa fa-leaf"></i>  Cosmetics</h3></a></div>
+      <div class="grid-item"><a href = "{% url 'automobiles' %}" class="w3-bar-item w3-button"><h3><i class="fa fa-automobile"></i>  Automobiles</h3></a></div>  
+      <div class="grid-item"><a href = "{% url 'real_estate' %}" class="w3-bar-item w3-button"><h3><i class="fa fa-building"></i>  Real Estate</h3></a></div>
+      <div class="grid-item"><a href = "{% url 'travel' %}" class="w3-bar-item w3-button"><h3> <i class="fa fa-plane"></i> Travel</h3></a></div>
+      <div class="grid-item"><a href = "{% url 'fianance' %}" class="w3-bar-item w3-button"><h3><i class="fa fa-money"></i> Fianance</h3></a></div> 
+      <div class="grid-item"><a href = "{% url 'food' %}" class="w3-bar-item w3-button"><h3><i class="fa fa-coffee" style="font-size:24px"></i> Food</h3></a></div> 
+      <div class="grid-item"><a href = "{% url 'education' %}" class="w3-bar-item w3-button"><h3><i class="fa fa-institution"></i>  Education</h3></a></div> 
+      <div class="grid-item"><a href = "{% url 'other' %}" class="w3-bar-item w3-button"><h3><i class="fa fa-lightbulb-o"></i>  Other</h3></a></div> 
+    </div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding  w3-padding-64 w3-container">
+  <head>
+    <h2> Recent Reviews </h2>
+    <style>
+    .grid-container1 {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      background-color: #fcfbf3;
+      padding: 40px;
+    }
+    .grid-item1 {
+      background-color: #fcfbf3;
+      padding: 20px;
+      font-size: 20px;
+      text-align: center;
+    }
+    </style>
+    </head>
+    <body>
+    
+    <div class="grid-container1">
+      <div class="grid-item1">
+        {% for review in search_list1 %}
+          <strong> {{ review }} </strong> <br>
+          {{ review.review }} <br>
+          by - <b>{{ review.username }}</b> {{ review.rating }}/5<br>
+          <br/>
+        {% endfor %}
+       </div>
+      <div class="grid-item1">
+        {% for review in search_list2 %}
+        <strong> {{ review }} </strong> <br>
+        {{ review.review }}  <br>
+        by - <b>{{ review.username }}</b> {{ review.rating }}/5<br>
+        <br/>
+      {% endfor %}</div>
+      <div class="grid-item1">{% for review in search_list3 %}
+        <strong> {{ review }} </strong> <br>
+        {{ review.review }}  <br>
+        by - <b>{{ review.username }}</b> {{ review.rating }}/5<br>
+        <br/>
+      {% endfor %}</div> 
+      <div class="grid-item1">{% for review in search_list4 %}
+        <strong> {{ review }} </strong> <br>
+        {{ review.review }}  <br>
+        by - <b>{{ review.username }}</b> {{ review.rating }}/5<br>
+        <br/>
+      {% endfor %}</div>
+      <div class="grid-item1">{% for review in search_list5 %}
+        <strong> {{ review }} </strong> <br>
+        {{ review.review }}  <br>
+        by - <b>{{ review.username }}</b> {{ review.rating }}/5<br>
+        <br/>
+      {% endfor %}</div>
+      <div class="grid-item1">{% for review in search_list6 %}
+        <strong> {{ review }} </strong> <br>
+        {{ review.review }}  <br>
+        by - <b>{{ review.username }}</b> {{ review.rating }}/5<br>
+        <br/>
+      {% endfor %}</div></div> 
+    </div>
+    
+    </body>
+
+<!-- Footer -->
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'footer.css' %}">
+<footer class="footer-distributed">
+
+			<div class="footer-left">
+
+				<h3>Company<span>logo</span></h3>
+
+				<p class="footer-links">
+					<a href="#" class="link-1">Home</a>
+					
+					<a href="#">Blog</a>
+				
+					<a href="#">Pricing</a>
+				
+					<a href="#">About</a>
+					
+					<a href="#">Faq</a>
+					
+					<a href="#">Contact</a>
+				</p>
+
+				<p class="footer-company-name">Company Name © 2024</p>
+			</div>
+
+			<div class="footer-center">
+
+				<div>
+					<i class="fa fa-map-marker"></i>
+					<p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p>+1.555.555.5555</p>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="mailto:support@company.com">support@company.com</a></p>
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+
+				<p class="footer-company-about">
+					<span>About the company</span>
+					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+				</p>
+
+				<div class="footer-icons">
+
+					<a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="#"><i class="fa fa-linkedin"></i></a>
+					<a href="#"><i class="fa fa-github"></i></a>
+
+				</div>
+
+			</div>
+
+		</footer>
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html>
+
+

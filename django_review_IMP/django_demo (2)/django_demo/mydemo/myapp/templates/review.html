@@ -1,0 +1,86 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'review.css' %}">
+<!DOCTYPE html> 
+<html lang="en"> 
+
+<head> 
+	<meta charset="UTF-8"> 
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1.0"> 
+	<title>Responsive Form Card</title> 
+	<link rel="stylesheet" href= 
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
+	<link rel="stylesheet" href="review.css"> 
+</head> 
+
+<body> 
+	
+  <h3>Feedback Form</h3> 
+	<div class="form-box"> 
+		<div class="textup"> 
+			<i class="fa fa-solid fa-clock"></i> 
+			It only takes two minutes!! 
+		</div> 
+		<form method="POST" onsubmit="myFunction()" > {% csrf_token %}
+			<label for="username"> 
+				<i class="fa fa-solid fa-user"></i> 
+				Name 
+			</label> 
+			<input type="text" id="username"
+				name="username" required> 
+
+      <label for="category">Rating:</label>
+      <select name="rating" id="rating">
+      <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+      </select> <br> <br>
+
+			<label for="companyname"> 
+				<i class="fa-solid fa-building"></i> 
+				Company Name
+			</label> 
+			<input type="text" id="companyname"
+				name="companyname" required> 
+
+        <label for="category">Choose a category:</label>
+        <select name="category" id="category">
+          <option value="entertainment"><b>Entertainment</b></option>
+          <option value="technology">Technology</option>
+          <option value="medical">Medical</option>
+          <option value="fashion">Fashion</option>
+          <option value="cosmetics">Cosmetics</option>
+          <option value="automobiles">Automobiles</option>
+          <option value="real_estate">Real Estate</option>
+          <option value="travel">Travel</option>
+          <option value="fianance">Fianance</option>
+          <option value="food">Food</option>
+          <option value="education">Education</option>
+          <option value="other">Other</option>
+        </select> 
+      <br> <br>
+
+			<label for="review"> 
+				<i class="fa-solid fa-comments"
+				style="margin-right: 3px;"></i> 
+				Write your Review: 
+			</label> 
+			<textarea id="review" name="review"
+					rows="4" cols="10" required> 
+			</textarea> 
+			<button type="submit"> 
+				Submit 
+			</button> 
+		</form> 
+		<script>
+			function myFunction() {
+			  alert("The form was submitted successfully!");
+			}
+			</script> <br> <br>
+		<button><a href="{% url 'loggedin' %}">Go to Home</a></button>
+	</div> 
+</body> 
+
+</html>

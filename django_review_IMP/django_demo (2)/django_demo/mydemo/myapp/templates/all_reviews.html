@@ -1,0 +1,14 @@
+<body style="background-color:SkyBlue;">
+    {% block content %}
+    
+    <h1><center> All Reviews </center></h1>
+    
+{% for review in all_reviews_list %}
+    <strong> {{ review }} </strong>
+    <ul>
+    <li> {{ review.review }} </li>
+    </ul>
+    <br/>
+{% endfor %}
+    
+{% endblock %}
